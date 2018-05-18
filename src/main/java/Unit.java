@@ -5,6 +5,7 @@ abstract class Unit {
   Unit(double value) {
     this.value = value;
   }
+
 }
 
 
@@ -14,17 +15,44 @@ class Inches extends Unit {
     super(value);
   }
 
-  double add(Cm unit) {
-    return unit.toInches() + this.value;
+  Inches add(Cm unit) {
+    this.value += unit.toInches();
+    return this;
   }
 
-  double add(Inches unit) {
-    return unit.value + this.value;
+  Inches add(Inches unit) {
+    this.value += unit.value;
+    return this;
   }
 
-  double toCm() {
-    return this.value * 2.5;
+  String compareTo(Feet unit) {
+    if(unit.toInches() == this.value) {
+      return "Both values are equal";
+    }
+    else if(unit.toInches() > this.value) {
+      return unit.toString() + " is greater";
+    }
+    else {
+      return this.toString() + " is greater";
+    }
   }
+
+  String compareTo(Cm unit) {
+    if(unit.toInches() == this.value) {
+      return "Both values are equal";
+    }
+    else if(unit.toInches() > this.value) {
+      return unit.toString() + " is greater";
+    }
+    else {
+      return this.toString() + " is greater";
+    }
+  }
+
+  public String toString() {
+    return this.value + "in";
+  }
+
 }
 
 
@@ -38,9 +66,26 @@ class Feet extends Unit {
     return this.value * 12;
   }
 
-  double toYards() {
-    return this.value * 1.0/3.0;
+  String compareTo(Inches unit) {
+    return unit.compareTo(this);
   }
+
+  String compareTo(Yards unit) {
+    if(unit.toFeet() == this.value) {
+      return "Both values are equal";
+    }
+    else if(unit.toFeet() > this.value) {
+      return unit.toString() + " is greater";
+    }
+    else {
+      return this.toString() + " is greater";
+    }
+  }
+
+  public String toString() {
+    return this.value + "ft";
+  }
+
 }
 
 
@@ -52,5 +97,34 @@ class Cm extends Unit {
 
   double toInches() {
     return this.value * 2.0/5.0;
+  }
+
+  String compareTo(Inches unit) {
+    return unit.compareTo(this);
+  }
+
+  public String toString() {
+    return this.value + "cm";
+  }
+
+}
+
+
+class Yards extends Unit {
+
+  Yards(double value) {
+    super(value);
+  }
+
+  double toFeet() {
+    return this.value * 3.0;
+  }
+
+  String compareTo(Feet unit) {
+    return unit.compareTo(this);
+  }
+
+  public String toString() {
+    return this.value + "yds";
   }
 }

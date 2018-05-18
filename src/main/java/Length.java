@@ -5,9 +5,7 @@ public class Length {
     Inches inch = new Inches(10.0);
     Cm cm = new Cm(12.0);
 
-    System.out.println(feet.value + "ft = " + feet.toInches() + "in");
-    System.out.println(feet.value + "ft = " + feet.toYards() + "yds");
-    System.out.println(inch.value + "in = " + inch.toCm() + "cm");
-    System.out.println(inch.value + "in + " + cm.value + "cm = " + inch.add(cm) + "in");
+    System.out.println(inch.toString() + " + " + cm.toString() + " = " + inch.add(cm).toString());
+    System.out.println(inch.compareTo(feet));
   }
 }

@@ -1,9 +1,9 @@
 # Lengths Comparison
 
-This performs the following conversions between units:
-- feet to inches
-- feet to yards
-- inches to cm
+This performs comparisons between the following units:
+- feet and inches
+- feet and yards
+- inches and cm
 
 Further, it can add two lengths in inches, and inches and cm using function overloading.
 
@@ -33,8 +33,8 @@ Cm cm = new Cm(10.0);
 double sum = inch.add(cm);
 ```
 
-Convert from inches to cm
+Compare 5 inches and 10 cm
 
 ```
-double result = inch.toCm();
+System.out.println(inch.compareTo(cm));
 ```
