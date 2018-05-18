@@ -6,6 +6,19 @@ abstract class Unit {
     this.value = value;
   }
 
+  String compareTo(Unit unit) {
+    if(unit.toInches() == this.toInches()) {
+      return "Both values are equal";
+    }
+    else if(unit.toInches() > this.value) {
+      return unit.toString() + " is greater";
+    }
+    else {
+      return this.toString() + " is greater";
+    }
+  }
+  
+  abstract double toInches();
 }
 
 
@@ -25,28 +38,8 @@ class Inches extends Unit {
     return this;
   }
 
-  String compareTo(Feet unit) {
-    if(unit.toInches() == this.value) {
-      return "Both values are equal";
-    }
-    else if(unit.toInches() > this.value) {
-      return unit.toString() + " is greater";
-    }
-    else {
-      return this.toString() + " is greater";
-    }
-  }
-
-  String compareTo(Cm unit) {
-    if(unit.toInches() == this.value) {
-      return "Both values are equal";
-    }
-    else if(unit.toInches() > this.value) {
-      return unit.toString() + " is greater";
-    }
-    else {
-      return this.toString() + " is greater";
-    }
+  double toInches() {
+    return this.value;
   }
 
   public String toString() {
@@ -66,22 +59,6 @@ class Feet extends Unit {
     return this.value * 12;
   }
 
-  String compareTo(Inches unit) {
-    return unit.compareTo(this);
-  }
-
-  String compareTo(Yards unit) {
-    if(unit.toFeet() == this.value) {
-      return "Both values are equal";
-    }
-    else if(unit.toFeet() > this.value) {
-      return unit.toString() + " is greater";
-    }
-    else {
-      return this.toString() + " is greater";
-    }
-  }
-
   public String toString() {
     return this.value + "ft";
   }
@@ -99,10 +76,6 @@ class Cm extends Unit {
     return this.value * 2.0/5.0;
   }
 
-  String compareTo(Inches unit) {
-    return unit.compareTo(this);
-  }
-
   public String toString() {
     return this.value + "cm";
   }
@@ -118,6 +91,10 @@ class Yards extends Unit {
 
   double toFeet() {
     return this.value * 3.0;
+  }
+
+  double toInches() {
+    return this.value * 36.0;
   }
 
   String compareTo(Feet unit) {
