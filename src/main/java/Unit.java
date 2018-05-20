@@ -11,14 +11,16 @@ abstract class Unit {
       return "Both values are equal";
     }
     else if(unit.toInches() > this.value) {
-      return unit.toString() + " is greater";
+      return unit + " is greater";
     }
     else {
-      return this.toString() + " is greater";
+      return this + " is greater";
     }
   }
   
   abstract double toInches();
+
+  abstract public String toString();
 }
 
 
