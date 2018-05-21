@@ -5,21 +5,21 @@ class Inches extends Unit {
   }
 
   Inches add(Cm unit) {
-    this.value += unit.toInches();
+    value += unit.toInches();
     return this;
   }
 
   Inches add(Inches unit) {
-    this.value += unit.value;
+    value += unit.value;
     return this;
   }
 
   double toInches() {
-    return this.value;
+    return value;
   }
 
   public String toString() {
-    return this.value + "in";
+    return value + "in";
   }
 
 }

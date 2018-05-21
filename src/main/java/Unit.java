@@ -10,7 +10,7 @@ abstract class Unit {
     if(unit.toInches() == this.toInches()) {
       return "Both values are equal";
     }
-    else if(unit.toInches() > this.value) {
+    else if(unit.toInches() > this.toInches()) {
       return unit + " is greater";
     }
     else {

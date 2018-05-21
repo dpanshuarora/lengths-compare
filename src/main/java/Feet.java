@@ -5,11 +5,11 @@ class Feet extends Unit {
   }
 
   double toInches() {
-    return this.value * 12;
+    return value * 12;
   }
 
   public String toString() {
-    return this.value + "ft";
+    return value + "ft";
   }
 
 }

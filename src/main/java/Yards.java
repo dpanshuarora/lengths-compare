@@ -5,10 +5,10 @@ class Yards extends Unit {
   }
 
   double toInches() {
-    return this.value * 36.0;
+    return value * 36.0;
   }
 
   public String toString() {
-    return this.value + "yds";
+    return value + "yds";
   }
 }
