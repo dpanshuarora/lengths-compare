@@ -1,14 +1,17 @@
-class Yards extends Unit {
+class Yards extends LengthUnit implements Unit {
+
+  final double YARDS_INCHES_CF = 36.0;
 
   Yards(double value) {
     super(value);
   }
 
-  double toInches() {
-    return value * 36.0;
+  public double toInches() {
+    return value * YARDS_INCHES_CF;
   }
 
   public String toString() {
     return value + "yds";
   }
+
 }

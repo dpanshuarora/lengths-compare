@@ -1,25 +1,7 @@
-abstract class Unit {
+public interface Unit {
 
-  double value;
-  
-  Unit(double value) {
-    this.value = value;
-  }
+  abstract double getValue();
 
-  String compareTo(Unit unit) {
-    if(unit.toInches() == this.toInches()) {
-      return "Both values are equal";
-    }
-    else if(unit.toInches() > this.toInches()) {
-      return unit + " is greater";
-    }
-    else {
-      return this + " is greater";
-    }
-  }
-  
-  abstract double toInches();
-
-  abstract public String toString();
+  abstract String toString();
 
 }

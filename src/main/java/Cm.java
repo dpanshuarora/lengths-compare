@@ -1,11 +1,13 @@
-class Cm extends Unit {
+class Cm extends LengthUnit implements Unit {
+
+  final double CM_INCHES_CF = 2.0/5.0;
 
   Cm(double value) {
     super(value);
   }
 
-  double toInches() {
-    return value * 2.0/5.0;
+  public double toInches() {
+    return value * CM_INCHES_CF;
   }
 
   public String toString() {

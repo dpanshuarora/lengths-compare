@@ -1,11 +1,13 @@
-class Feet extends Unit {
+class Feet extends LengthUnit implements Unit {
+
+  final double FEET_INCHES_CF = 12.0;
 
   Feet(double value) {
     super(value);
   }
 
-  double toInches() {
-    return value * 12;
+  public double toInches() {
+    return value * FEET_INCHES_CF;
   }
 
   public String toString() {

@@ -1,4 +1,4 @@
-public class Length {
+public class LengthEntry {
     
   public static void main(String[] args) {
     Feet feet = new Feet(15.0);
@@ -6,6 +6,7 @@ public class Length {
     Cm cm = new Cm(12.0);
 
     System.out.println(inch + " + " + cm + " = " + inch.add(cm));
-    System.out.println(inch.compareTo(feet));
+    
   }
+
 }

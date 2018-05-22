@@ -1,20 +1,20 @@
-class Inches extends Unit {
+class Inches extends LengthUnit implements Unit {
 
   Inches(double value) {
     super(value);
   }
 
-  Inches add(Cm unit) {
+  public Inches add(Cm unit) {
     value += unit.toInches();
     return this;
   }
 
-  Inches add(Inches unit) {
+  public Inches add(Inches unit) {
     value += unit.value;
     return this;
   }
 
-  double toInches() {
+  public double toInches() {
     return value;
   }
 
