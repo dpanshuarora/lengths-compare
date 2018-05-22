@@ -1,17 +1,19 @@
-class Inches extends LengthUnit implements Unit {
+class Inches extends LengthUnit implements Unit, Cloneable {
 
   Inches(double value) {
     super(value);
   }
 
-  public String add(Cm unit) {
-    value += unit.toInches();
-    return this.toString();
+  public Inches add(Cm unit) throws CloneNotSupportedException {
+    Inches inchesClone = (Inches) clone();
+    inchesClone.value += unit.toInches();
+    return inchesClone;
   }
 
-  public String add(Inches unit) {
-    value += unit.value;
-    return this.toString();
+  public Inches add(Inches unit) throws CloneNotSupportedException {
+    Inches inchesClone = (Inches) clone();
+    inchesClone.value += unit.value;
+    return inchesClone;
   }
 
   public double toInches() {
@@ -21,5 +23,5 @@ class Inches extends LengthUnit implements Unit {
   public String toString() {
     return value + "in";
   }
-
+  
 }
