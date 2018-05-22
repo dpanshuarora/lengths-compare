@@ -4,14 +4,14 @@ class Inches extends LengthUnit implements Unit {
     super(value);
   }
 
-  public Inches add(Cm unit) {
+  public String add(Cm unit) {
     value += unit.toInches();
-    return this;
+    return this.toString();
   }
 
-  public Inches add(Inches unit) {
+  public String add(Inches unit) {
     value += unit.value;
-    return this;
+    return this.toString();
   }
 
   public double toInches() {
