@@ -1,7 +1,5 @@
 class Feet extends LengthUnit implements Unit {
 
-  final double FEET_INCHES_CF = 12.0;
-
   Feet(double value) {
     super(value);
   }

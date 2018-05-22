@@ -1,7 +1,5 @@
 class Yards extends LengthUnit implements Unit {
 
-  final double YARDS_INCHES_CF = 36.0;
-
   Yards(double value) {
     super(value);
   }
