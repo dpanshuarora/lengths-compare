@@ -1,4 +1,6 @@
-class Feet extends LengthUnit implements Unit {
+class Feet extends LengthUnit {
+
+  final static double FEET_INCHES_CF = 12.0;
 
   Feet(double value) {
     super(value);
