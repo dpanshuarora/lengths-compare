@@ -1,8 +1,8 @@
-class CentiMeter extends LengthUnit {
+class CentiMeters extends LengthUnit {
 
   final static double CENTIMETERS_INCHES_CF = 2.0/5.0;
 
-  CentiMeter(double value) {
+  CentiMeters(double value) {
     super(value);
   }
 
